@@ -1,0 +1,85 @@
+# Android #
+*.apk
+*.ap_
+*.aab
+*.dex
+*.class
+bin/
+gen/
+gradle/
+build/
+captures/
+.externalNativeBuild
+.local.properties
+.swo
+.swp
+user.properties
+*~
+*.lock
+*.keystore
+*.jks
+
+# Kotlin #
+*.log
+
+# Java #
+*.ctxt
+*.jar
+*.war
+hs_err_pid*
+
+# Python #
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+__pycache__/
+*.so
+*.egg
+*.egg-info/
+.dist-info/
+.cache
+.eggs
+parts/
+var/
+sdist/
+develop-eggs/
+.installed.cfg
+lib/
+lib64/
+wheels/
+.buildozer/
+
+# Flask #
+instance/
+.webassets-cache
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IDEs (Android Studio, IntelliJ, PyCharm, VSCode) #
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+*.idea_modules/
+out/
+
+# Logs and databases #
+*.sql
+*.sqlite
+*.sqlite3
+
+# OS generated files #
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
