@@ -1,9 +1,9 @@
-
 import yfinance as yf
 import pandas as pd
 from niftystocks import ns
 from datetime import datetime, timedelta
 from pytickersymbols import PyTickerSymbols
+
 
 def get_date_range(frequency):
     """
@@ -30,6 +30,7 @@ def get_date_range(frequency):
         raise ValueError("Invalid frequency")
     return start_date, end_date
 
+
 def get_weights(risk_appetite):
     """
     Get weights based on the specified risk appetite.
@@ -48,6 +49,7 @@ def get_weights(risk_appetite):
         return {'Monthly Returns': 0.4, 'Volatility': 0.1, 'Momentum': 0.4, 'Sharpe Ratio': 0.1}
     else:
         raise ValueError("Invalid risk appetite")
+
 
 def fetch_stock_data(tickers, start_date, end_date):
     """
@@ -77,6 +79,7 @@ def fetch_stock_data(tickers, start_date, end_date):
     all_data = pd.concat(data_list, axis=1)
     return all_data
 
+
 def calculate_metrics(data):
     """
     Calculate financial metrics based on the stock data.
@@ -98,6 +101,7 @@ def calculate_metrics(data):
     metrics['Sharpe Ratio'] = sharpe_ratio
     return metrics
 
+
 def select_stocks(stock_metrics, weights, num_stocks=15):
     """
     Select top stocks based on calculated metrics and weights.
@@ -112,6 +116,7 @@ def select_stocks(stock_metrics, weights, num_stocks=15):
     """
     ranked_stocks = stock_metrics.dot(pd.Series(weights)).sort_values(ascending=False)
     return ranked_stocks.head(num_stocks)
+
 
 def get_tickers(countries):
     """
@@ -151,12 +156,12 @@ def get_tickers(countries):
 
     return final_tickers
 
+
 if __name__ == '__main__':
     frequency = 'Annually'
     risk_appetite = 'Low'
 
-    # Example: Fetch stock data for Chinese stocks based on low risk appetite
-    tickers = get_tickers(['China'])
+    tickers = get_tickers(['China', 'Germany'])
     start_date, end_date = get_date_range(frequency)
     weights = get_weights(risk_appetite)
 
